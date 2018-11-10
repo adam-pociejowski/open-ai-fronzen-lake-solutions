@@ -4,7 +4,7 @@ import numpy as np
 learning_rate = 0.8
 discount_rate = 0.95
 num_episodes = 10000
-max_episode_step = 3000
+max_episode_step = 10
 
 env = gym.make('FrozenLake-v0')
 Q = np.zeros([env.observation_space.n, env.action_space.n])
@@ -23,6 +23,5 @@ for episode in range(num_episodes):
         if done:
             break
     rewards_from_all_episodes.append(episode_reward)
-
 
 print("Score over time: {}".format(sum(rewards_from_all_episodes) / num_episodes))
